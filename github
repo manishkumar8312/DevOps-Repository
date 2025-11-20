@@ -1,12 +1,11 @@
-# 🐙 Git & GitHub Basic Commands
+# Git & GitHub Basic Commands
 
 Git is a powerful version control system used to track changes and collaborate on projects efficiently.  
-Here’s a quick list of essential **Git & GitHub commands** for your DevOps toolkit.
+This document provides a comprehensive list of essential Git & GitHub commands for development and DevOps workflows.
 
 ---
 
-## 🏁 Initialization & Configuration
-
+## Initialization & Configuration
 | Command | Description |
 |--------|-------------|
 | `git init` | Initialize a new Git repository |
@@ -17,8 +16,7 @@ Here’s a quick list of essential **Git & GitHub commands** for your DevOps too
 
 ---
 
-## 📂 Working With Files
-
+## Working With Files
 | Command | Description |
 |--------|-------------|
 | `git status` | Show file status |
@@ -26,36 +24,37 @@ Here’s a quick list of essential **Git & GitHub commands** for your DevOps too
 | `git add .` | Add all files to staging |
 | `git reset <file>` | Unstage a file |
 | `git rm <file>` | Delete a file and stage removal |
+| `git restore <file>` | Restore file from last commit |
+| `git restore --staged <file>` | Unstage changes |
+| `git mv <old> <new>` | Move or rename a file |
 
 ---
 
-## 📦 Commit Operations
-
+## Commit Operations
 | Command | Description |
 |--------|-------------|
 | `git commit -m "<message>"` | Commit staged changes |
 | `git commit -am "<message>"` | Add & commit tracked files |
 | `git log` | View commit history |
 | `git log --oneline` | Short commit log |
+| `git show <commit>` | Show details of a commit |
 
 ---
 
-## 🌿 Branching
-
+## Branching
 | Command | Description |
 |--------|-------------|
 | `git branch` | List branches |
 | `git branch <name>` | Create a new branch |
 | `git checkout <branch>` | Switch to a branch |
 | `git checkout -b <name>` | Create and switch |
-| `git switch <branch>` | Switch (newer command) |
-| `git merge <branch>` | Merge branch into current |
+| `git switch <branch>` | Switch to a branch |
+| `git merge <branch>` | Merge a branch into current |
 | `git branch -d <branch>` | Delete a branch |
 
 ---
 
-##  Pushing & Pulling
-
+## Pushing & Pulling
 | Command | Description |
 |--------|-------------|
 | `git remote -v` | Show remote URLs |
@@ -64,55 +63,109 @@ Here’s a quick list of essential **Git & GitHub commands** for your DevOps too
 | `git push` | Push changes |
 | `git pull` | Pull latest changes |
 | `git fetch` | Fetch updates only |
+| `git push --force-with-lease` | Safe force push |
+| `git pull --ff-only` | Fast-forward only pull |
 
 ---
 
-## 🔄 Reset & Revert
-
+## Reset & Revert
 | Command | Description |
 |--------|-------------|
 | `git reset --soft <commit>` | Move HEAD, keep staged changes |
 | `git reset --hard <commit>` | Reset and remove local changes |
 | `git revert <commit>` | Undo commit with a new commit |
+| `git checkout <commit>` | Checkout any commit |
+| `git checkout HEAD~1` | Move to previous commit |
 
 ---
 
-## 📝 GitHub CLI Commands
+## Cleanup
+| Command | Description |
+|--------|-------------|
+| `git clean -n` | Preview files to be deleted |
+| `git clean -f` | Delete untracked files |
+| `git clean -fd` | Delete untracked files & directories |
+| `git reset --hard` | Discard all local changes |
 
+---
+
+## GitHub CLI Commands
 | Command | Description |
 |--------|-------------|
 | `gh auth login` | Authenticate to GitHub |
 | `gh repo create` | Create a new repository |
 | `gh issue list` | List issues |
 | `gh pr create` | Create a pull request |
-| `gh pr merge <id>` | Merge a PR |
+| `gh pr merge <id>` | Merge a pull request |
 
 ---
 
-## 🧹 Cleanup
-
+## Rebase
 | Command | Description |
 |--------|-------------|
-| `git clean -n` | Preview files to be deleted |
-| `git clean -f` | Delete untracked files |
-| `git reset --hard` | Discard all local changes |
+| `git rebase <branch>` | Rebase current branch onto another |
+| `git rebase --continue` | Continue after resolving conflicts |
+| `git rebase --abort` | Abort rebase |
+| `git rebase --skip` | Skip current patch |
+| `git rebase -i <commit>` | Interactive rebase |
+| `git pull --rebase` | Pull with rebase |
+| `git rebase --onto <newbase> <upstream> <branch>` | Advanced rebase operation |
+| `git reflog` | View reference logs for recovery |
 
 ---
-## 🔁 Rebase
 
+## Stash Commands
 | Command | Description |
 |--------|-------------|
-| `git rebase <branch>` | Rebase the current branch onto `<branch>` (replay commits) |
-| `git rebase --continue` | Continue after resolving conflicts during a rebase |
-| `git rebase --abort` | Abort rebase and return to original state |
-| `git rebase --skip` | Skip the current patch that failed during rebase |
-| `git rebase -i <commit>` | Interactive rebase starting from `<commit>` (use `-i HEAD~n` for last n commits) |
-| `git pull --rebase` | Fetch and rebase local commits on top of upstream (avoids merge commits) |
-| `git rebase --onto <newbase> <upstream> <branch>` | Rebase `<branch>` onto `<newbase>`, excluding commits already in `<upstream>` |
-| `git reflog` | (Handy after bad rebase) Find commit hashes to recover lost commits |
+| `git stash` | Save uncommitted changes |
+| `git stash list` | Show all stashes |
+| `git stash apply` | Reapply latest stash |
+| `git stash pop` | Apply and remove latest stash |
+| `git stash drop` | Delete a specific stash |
+
 ---
 
-### ✅ Bonus Tips
+## Tagging (Release Management)
+| Command | Description |
+|--------|-------------|
+| `git tag` | List tags |
+| `git tag <tag>` | Create a lightweight tag |
+| `git tag -a <tag> -m "<msg>"` | Create an annotated tag |
+| `git push origin <tag>` | Push a single tag |
+| `git push --tags` | Push all tags |
+| `git tag -d <tag>` | Delete local tag |
+| `git push origin --delete <tag>` | Delete remote tag |
+
+---
+
+## Cherry-pick
+| Command | Description |
+|--------|-------------|
+| `git cherry-pick <commit>` | Apply a specific commit |
+| `git cherry-pick --abort` | Abort cherry-pick |
+| `git cherry-pick --continue` | Continue after conflict |
+
+---
+
+## Submodules
+| Command | Description |
+|--------|-------------|
+| `git submodule add <repo> <path>` | Add a submodule |
+| `git submodule update --init` | Initialize submodules |
+| `git submodule sync` | Synchronize submodule URLs |
+
+---
+
+## Inspect & Search
+| Command | Description |
+|--------|-------------|
+| `git blame <file>` | Show who modified each line |
+| `git grep "<text>"` | Search text inside repository |
+| `git shortlog -sn` | Show contributor commit counts |
+
+---
+
+## Additional Useful Tips
 
 ```bash
 git add -p        # Interactive staging
