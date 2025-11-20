@@ -115,14 +115,21 @@ Each section contains:
 ```bash
 DevOps-Repository/
 │
-├── linux-basics/        # Scripts and commands
-├── docker/              # Dockerfiles, images, registries
-├── kubernetes/          # K8s manifests, deployments, services
-├── cicd/                # Jenkins, GitHub Actions pipelines
-├── git-github/          # Git & GitHub basics, advanced commands, workflows, best practices
-├── terraform/           # IaC modules and cloud provisioning
-├── ansible/             # Playbooks, inventory, roles
-└── notes/               # Theory & revision material
+├── ansible/              # Playbooks, inventory, roles, automation tasks
+├── cicd/                 # Jenkins, GitHub Actions, GitLab CI, pipelines
+├── cloud/                # AWS, Azure, GCP services, best practices
+├── diagrams/             # Architecture diagrams, workflow diagrams
+├── docker/               # Dockerfiles, image builds, registries, compose files
+├── git-github/           # Git commands, workflows, branching strategies
+├── kubernetes/           # K8s manifests, deployments, services, helm charts
+├── linux-basics/         # Shell scripts, Linux commands, system admin tasks
+├── monitoring/           # Prometheus, Grafana dashboards, alerts
+├── networking/           # VPC, subnets, load balancers, DNS basics
+├── notes/                # Theory, revision notes, cheat sheets
+├── scripting/            # Python/Bash automation scripts
+├── security-devsecops/   # Security scans, SAST, DAST, secrets management
+└── terraform/            # IaC modules, cloud provisioning, state management
+
 ```
 
 ---
