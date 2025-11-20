@@ -25,24 +25,12 @@ Each section contains:
 ## Topics Covered
 
 <details>
-<summary><strong>Linux Fundamentals</strong></summary>
+<summary><strong>Ansible (Configuration Management)</strong></summary>
 
-- Command-line usage  
-- File system structures  
-- Shell scripting  
-- Process and service management  
-- System administration basics  
-
-</details>
-
-<details>
-<summary><strong>Docker & Containerization</strong></summary>
-
-- Dockerfiles and image optimization  
-- Multi-stage builds  
-- Networking and storage  
-- Private registry usage  
-- Container lifecycle commands  
+- Playbooks & roles  
+- Inventory handling  
+- Server automation  
+- Idempotent configurations  
 
 </details>
 
@@ -68,13 +56,13 @@ Each section contains:
 </details>
 
 <details>
-<summary><strong>Kubernetes</strong></summary>
+<summary><strong>Docker & Containerization</strong></summary>
 
-- Pod, Deployment, Service  
-- Ingress controllers  
-- Persistent volumes  
-- ConfigMaps & Secrets  
-- Helm charts (planned)  
+- Dockerfiles and image optimization  
+- Multi-stage builds  
+- Networking and storage  
+- Private registry usage  
+- Container lifecycle commands  
 
 </details>
 
@@ -89,12 +77,24 @@ Each section contains:
 </details>
 
 <details>
-<summary><strong>Ansible (Configuration Management)</strong></summary>
+<summary><strong>Kubernetes</strong></summary>
 
-- Playbooks & roles  
-- Inventory handling  
-- Server automation  
-- Idempotent configurations  
+- Pod, Deployment, Service  
+- Ingress controllers  
+- Persistent volumes  
+- ConfigMaps & Secrets  
+- Helm charts (planned)  
+
+</details>
+
+<details>
+<summary><strong>Linux Fundamentals</strong></summary>
+
+- Command-line usage  
+- File system structures  
+- Shell scripting  
+- Process and service management  
+- System administration basics  
 
 </details>
 
