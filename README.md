@@ -119,6 +119,7 @@ DevOps-Repository/
 ├── docker/              # Dockerfiles, images, registries
 ├── kubernetes/          # K8s manifests, deployments, services
 ├── cicd/                # Jenkins, GitHub Actions pipelines
+├── git-github/          # Git & GitHub basics, advanced commands, workflows, best practices
 ├── terraform/           # IaC modules and cloud provisioning
 ├── ansible/             # Playbooks, inventory, roles
 └── notes/               # Theory & revision material
