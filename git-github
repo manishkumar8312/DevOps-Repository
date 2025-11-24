@@ -6,6 +6,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Initialization & Configuration
+Basic commands to set up Git on your system, configure identity, and start or clone repositories.
+
 | Command | Description |
 |--------|-------------|
 | `git init` | Initialize a new Git repository |
@@ -17,6 +19,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Working With Files
+Commands used to track, untrack, restore, delete, and manage files inside your Git working directory and staging area.
+
 | Command | Description |
 |--------|-------------|
 | `git status` | Show file status |
@@ -31,6 +35,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Commit Operations
+Commands related to creating commits, viewing commit history, and inspecting detailed changes.
+
 | Command | Description |
 |--------|-------------|
 | `git commit -m "<message>"` | Commit staged changes |
@@ -42,6 +48,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Branching
+Commands to create, switch, merge, and delete branches for parallel development workflows.
+
 | Command | Description |
 |--------|-------------|
 | `git branch` | List branches |
@@ -55,6 +63,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Pushing & Pulling
+Commands used to sync changes with remote repositories—push your updates or fetch/pull others’ work.
+
 | Command | Description |
 |--------|-------------|
 | `git remote -v` | Show remote URLs |
@@ -69,6 +79,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Reset & Revert
+Commands that manipulate commit history or undo changes without losing your working directory state.
+
 | Command | Description |
 |--------|-------------|
 | `git reset --soft <commit>` | Move HEAD, keep staged changes |
@@ -80,6 +92,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Cleanup
+Commands to remove untracked files, reset your workspace, and clean up unnecessary changes safely.
+
 | Command | Description |
 |--------|-------------|
 | `git clean -n` | Preview files to be deleted |
@@ -90,6 +104,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## GitHub CLI Commands
+Commands from GitHub CLI (gh) to interact with GitHub directly—creating repos, PRs, issues, and authentication.
+
 | Command | Description |
 |--------|-------------|
 | `gh auth login` | Authenticate to GitHub |
@@ -101,6 +117,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Rebase
+Commands for rewriting commit history by moving or reorganizing commits, typically used for cleaner branch histories.
+
 | Command | Description |
 |--------|-------------|
 | `git rebase <branch>` | Rebase current branch onto another |
@@ -115,6 +133,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Stash Commands
+Commands to temporarily save uncommitted changes so you can work on something else and restore them later.
+
 | Command | Description |
 |--------|-------------|
 | `git stash` | Save uncommitted changes |
@@ -126,6 +146,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Tagging (Release Management)
+Commands for creating, managing, and pushing tags used in release versions and milestones.
+
 | Command | Description |
 |--------|-------------|
 | `git tag` | List tags |
@@ -139,6 +161,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Cherry-pick
+Commands to pick specific commits from one branch and apply them on another without merging everything.
+
 | Command | Description |
 |--------|-------------|
 | `git cherry-pick <commit>` | Apply a specific commit |
@@ -148,6 +172,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Submodules
+Commands to include external repositories inside your project and keep them updated.
+
 | Command | Description |
 |--------|-------------|
 | `git submodule add <repo> <path>` | Add a submodule |
@@ -157,6 +183,8 @@ This document provides a comprehensive list of essential Git & GitHub commands f
 ---
 
 ## Inspect & Search
+Commands used to analyze repository changes, find who modified what, and search within codebases.
+
 | Command | Description |
 |--------|-------------|
 | `git blame <file>` | Show who modified each line |
