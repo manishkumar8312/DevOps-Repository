@@ -5,27 +5,24 @@ The `networking/` directory contains all infrastructure components related to **
 ---
 
 ## 1. Virtual Private Cloud (VPC)
+
+```html
 <p align="center">
   <img src="https://content.nordlayer.com/uploads/What_is_a_Virtual_Private_Cloud_scheme_15c7e05876.png"
        alt="VPC Architecture Diagram"
-       width="500"
-       height="300"/>
-</p>
-
-<p align="center">
+       width="45%"/>
   <img src="https://docs.aws.amazon.com/images/vpc/latest/userguide/images/how-it-works.png"
        alt="AWS VPC How It Works"
-       width="500"
-       height="300"/>
+       width="45%"/>
 </p>
-
+```
 
 A **Virtual Private Cloud (VPC)** is an isolated virtual network environment within a cloud provider. It allows full control over IP addressing, routing, and network security.
 
 ### Key Responsibilities
 
 * Provides network isolation from other tenants
-* Defines IP address range using CIDR blocks
+* Defines IP address ranges using CIDR blocks
 * Acts as a parent container for subnets, gateways, and routing tables
 
 ### Common Configurations
@@ -44,19 +41,17 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 ---
 
 ## 2. Subnets
+
+```html
 <p align="center">
   <img src="https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-example-private-subnets.png"
        alt="VPC with Public and Private Subnets"
-       width="500"
-       height="300"/>
-</p>
-
-<p align="center">
+       width="45%"/>
   <img src="https://cdn.prod.website-files.com/6340354625974824cde2e195/6578d079260c3223351bd0d3_6hBOTP_eTKiei4JgB1Ds52pEMmCFRCXP0n66tEh_gQBDNhQ8jtLcSWPPNxpEC3s6YjhsGqBj5bZ1ooFo07T1d16wGGoByH7C-QogSh1Ca2-aXt3QbXLYnrrOf0orVgZ3iwqZPizaUx3cUuAd1v9Uvq8.gif"
        alt="Private Subnet Traffic Flow Animation"
-       width="500"
-       height="300"/>
+       width="45%"/>
 </p>
+```
 
 **Subnets** divide a VPC into smaller, logical networks and are typically mapped to individual availability zones.
 
@@ -74,41 +69,35 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 ### Key Characteristics
 
 * Each subnet belongs to one availability zone
-* Subnets improve fault isolation and scalability
-* Used to separate tiers of an application (web, app, database)
+* Improves fault isolation and scalability
+* Enables tier-based architecture (web, application, database)
 
 ---
 
 ## 3. Load Balancing
+
+```html
 <p align="center">
   <img src="https://images.wondershare.com/edrawmax/templates/network-diagram-for-load-balancing.png"
        alt="Network Load Balancing Architecture Diagram"
-       width="520"
-       height="320"/>
-</p>
-
-<p align="center">
+       width="30%"/>
   <img src="https://miro.medium.com/v2/resize%3Afit%3A1400/1%2AGb7hi5pqKmYYxEIUCJylHw.gif"
        alt="Load Balancer Traffic Distribution Animation"
-       width="520"
-       height="320"/>
-</p>
-
-<p align="center">
+       width="30%"/>
   <img src="https://assets.digitalocean.com/articles/high-availability/Diagram_1.png"
        alt="High Availability Architecture with Load Balancer"
-       width="520"
-       height="320"/>
+       width="30%"/>
 </p>
+```
 
-**Load Balancers** distribute incoming network traffic across multiple backend resources to ensure availability and performance.
+**Load Balancers** distribute incoming network traffic across multiple backend resources to ensure availability, scalability, and performance.
 
 ### Functions
 
 * Traffic distribution across instances or containers
 * Health checks to route traffic only to healthy targets
 * SSL/TLS termination
-* Session persistence (if required)
+* Session persistence (when required)
 
 ### Common Load Balancer Types
 
@@ -121,26 +110,24 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 
 * Improves application availability
 * Enables horizontal scaling
-* Prevents single points of failure
+* Eliminates single points of failure
 
 ---
 
 ## 4. DNS (Domain Name System)
+
+```html
 <p align="center">
   <img src="https://assets.bytebytego.com/diagrams/0175-dns-record-types-you-should-know.png"
        alt="DNS Record Types Overview"
-       width="520"
-       height="320"/>
-</p>
-
-<p align="center">
+       width="45%"/>
   <img src="https://storage.googleapis.com/gweb-cloudblog-publish/images/image2_YjKkxEG.max-2000x2000.jpg"
        alt="Cloud DNS Resolution Architecture"
-       width="520"
-       height="320"/>
+       width="45%"/>
 </p>
+```
 
-**DNS** translates human-readable domain names into IP addresses, enabling users and services to locate applications efficiently.
+**DNS (Domain Name System)** translates human-readable domain names into IP addresses, enabling users and services to locate applications efficiently.
 
 ### Core Responsibilities
 
@@ -167,11 +154,11 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 
 Although implemented in separate modules, networking integrates closely with:
 
-* **Security Groups** – Stateful firewall rules at resource level
-* **Network ACLs** – Stateless traffic filtering at subnet level
+* **Security Groups** – Stateful firewall rules at the resource level
+* **Network ACLs** – Stateless traffic filtering at the subnet level
 * **Routing Tables** – Control packet flow between subnets and gateways
 
-These components ensure controlled and auditable network communication.
+These components ensure controlled, auditable, and secure network communication.
 
 ---
 
@@ -180,7 +167,7 @@ These components ensure controlled and auditable network communication.
 The `networking/` directory typically includes:
 
 * Infrastructure-as-Code (IaC) definitions (e.g., Terraform, CloudFormation)
-* Modular network components for reuse
-* Environment-specific configurations (dev, staging, production)
+* Modular and reusable networking components
+* Environment-specific configurations (development, staging, production)
 
-This structure enables consistent, scalable, and repeatable network deployments.
+This structure enables **consistent, scalable, and repeatable** network deployments across environments.
