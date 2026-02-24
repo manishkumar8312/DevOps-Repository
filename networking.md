@@ -6,7 +6,6 @@ The `networking/` directory contains all infrastructure components related to **
 
 ## 1. Virtual Private Cloud (VPC)
 
-```html
 <p align="center">
   <img src="https://content.nordlayer.com/uploads/What_is_a_Virtual_Private_Cloud_scheme_15c7e05876.png"
        alt="VPC Architecture Diagram"
@@ -15,7 +14,6 @@ The `networking/` directory contains all infrastructure components related to **
        alt="AWS VPC How It Works"
        width="45%"/>
 </p>
-```
 
 A **Virtual Private Cloud (VPC)** is an isolated virtual network environment within a cloud provider. It allows full control over IP addressing, routing, and network security.
 
@@ -42,7 +40,6 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 
 ## 2. Subnets
 
-```html
 <p align="center">
   <img src="https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-example-private-subnets.png"
        alt="VPC with Public and Private Subnets"
@@ -51,7 +48,6 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
        alt="Private Subnet Traffic Flow Animation"
        width="45%"/>
 </p>
-```
 
 **Subnets** divide a VPC into smaller, logical networks and are typically mapped to individual availability zones.
 
@@ -76,7 +72,6 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 
 ## 3. Load Balancing
 
-```html
 <p align="center">
   <img src="https://images.wondershare.com/edrawmax/templates/network-diagram-for-load-balancing.png"
        alt="Network Load Balancing Architecture Diagram"
@@ -88,7 +83,7 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
        alt="High Availability Architecture with Load Balancer"
        width="30%"/>
 </p>
-```
+
 
 **Load Balancers** distribute incoming network traffic across multiple backend resources to ensure availability, scalability, and performance.
 
@@ -116,7 +111,6 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
 
 ## 4. DNS (Domain Name System)
 
-```html
 <p align="center">
   <img src="https://assets.bytebytego.com/diagrams/0175-dns-record-types-you-should-know.png"
        alt="DNS Record Types Overview"
@@ -125,7 +119,6 @@ A **Virtual Private Cloud (VPC)** is an isolated virtual network environment wit
        alt="Cloud DNS Resolution Architecture"
        width="45%"/>
 </p>
-```
 
 **DNS (Domain Name System)** translates human-readable domain names into IP addresses, enabling users and services to locate applications efficiently.
 
