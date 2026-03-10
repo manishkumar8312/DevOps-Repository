@@ -1,114 +1,149 @@
-## 🐳 Docker Basic Commands
+# Docker Command Reference
 
-Docker is one of the most essential tools in DevOps for containerizing applications.  
-Here’s a list of useful **Docker commands**, neatly categorized for your DevOps learning journey.
+Docker is a core tool in modern DevOps workflows. It enables developers to package applications along with their dependencies into lightweight, portable containers that run consistently across environments.
 
----
-
-### Docker Setup & Information
-| Command | Description |
-|----------|-------------|
-| `docker --version` | Check Docker version |
-| `docker info` | Display system-wide Docker information |
-| `docker help` | Show help for Docker commands |
+This document provides a categorized reference of commonly used Docker commands to help understand and manage Docker images, containers, volumes, networking, and Docker Compose.
 
 ---
 
-### Images Management
-| Command | Description |
-|----------|-------------|
-| `docker images` | List all local images |
-| `docker pull <image>` | Download image from Docker Hub |
-| `docker rmi <image>` | Remove an image |
-| `docker image inspect <image>` | Display detailed image information |
-| `docker image prune` | Remove unused images |
-| `docker build -t <image_name> .` | Build image from Dockerfile |
-| `docker tag <source_image> <repo:tag>` | Tag an image with a name and version |
+# Docker Setup and Information
+
+| Command            | Description                                   |
+| ------------------ | --------------------------------------------- |
+| `docker --version` | Displays the installed Docker version         |
+| `docker info`      | Shows detailed system-wide Docker information |
+| `docker help`      | Lists all available Docker commands and usage |
 
 ---
 
-### Container Management
-| Command | Description |
-|----------|-------------|
-| `docker ps` | List running containers |
-| `docker ps -a` | List all containers (including stopped ones) |
-| `docker run <image>` | Run a container from an image |
-| `docker run -it <image>` | Run container interactively with terminal |
-| `docker run -d <image>` | Run container in detached mode (background) |
-| `docker run --name <name> <image>` | Run container with a custom name |
-| `docker exec -it <container> /bin/bash` | Access running container shell |
-| `docker start <container>` | Start a stopped container |
-| `docker stop <container>` | Stop a running container |
-| `docker restart <container>` | Restart container |
-| `docker rm <container>` | Remove a stopped container |
-| `docker logs <container>` | View container logs |
-| `docker inspect <container>` | View container details |
-| `docker stats` | Show real-time resource usage by containers |
+# Image Management
+
+| Command                                      | Description                                  |
+| -------------------------------------------- | -------------------------------------------- |
+| `docker images`                              | Lists all locally available Docker images    |
+| `docker pull <image>`                        | Downloads an image from Docker Hub           |
+| `docker rmi <image>`                         | Removes a Docker image                       |
+| `docker image inspect <image>`               | Displays detailed information about an image |
+| `docker image prune`                         | Removes unused images                        |
+| `docker build -t <image_name> .`             | Builds an image from a Dockerfile            |
+| `docker tag <source_image> <repository:tag>` | Assigns a tag to an existing image           |
 
 ---
 
-### Volumes (Data Persistence)
-| Command | Description |
-|----------|-------------|
-| `docker volume create <volume_name>` | Create a new volume |
-| `docker volume ls` | List all volumes |
-| `docker volume inspect <volume_name>` | Display volume details |
-| `docker volume rm <volume_name>` | Remove a volume |
-| `docker run -v <volume_name>:/path/in/container <image>` | Mount a volume to a container |
+# Container Management
+
+| Command                                 | Description                                         |
+| --------------------------------------- | --------------------------------------------------- |
+| `docker ps`                             | Lists currently running containers                  |
+| `docker ps -a`                          | Lists all containers including stopped ones         |
+| `docker run <image>`                    | Creates and runs a container from an image          |
+| `docker run -it <image>`                | Runs a container interactively with terminal access |
+| `docker run -d <image>`                 | Runs a container in detached mode                   |
+| `docker run --name <name> <image>`      | Runs a container with a custom name                 |
+| `docker exec -it <container> /bin/bash` | Opens a shell inside a running container            |
+| `docker start <container>`              | Starts a stopped container                          |
+| `docker stop <container>`               | Stops a running container                           |
+| `docker restart <container>`            | Restarts a container                                |
+| `docker rm <container>`                 | Removes a stopped container                         |
+| `docker logs <container>`               | Displays logs generated by a container              |
+| `docker inspect <container>`            | Shows detailed container configuration              |
+| `docker stats`                          | Displays real-time resource usage statistics        |
 
 ---
 
-### Networking
-| Command | Description |
-|----------|-------------|
-| `docker network ls` | List all networks |
-| `docker network create <network_name>` | Create a custom network |
-| `docker network inspect <network_name>` | Show network details |
-| `docker network rm <network_name>` | Remove a network |
-| `docker run --network <network_name> <image>` | Attach container to a network |
+# Volume Management (Data Persistence)
+
+Volumes allow persistent storage for containers.
+
+| Command                                                  | Description                               |
+| -------------------------------------------------------- | ----------------------------------------- |
+| `docker volume create <volume_name>`                     | Creates a new Docker volume               |
+| `docker volume ls`                                       | Lists all Docker volumes                  |
+| `docker volume inspect <volume_name>`                    | Shows detailed information about a volume |
+| `docker volume rm <volume_name>`                         | Removes a volume                          |
+| `docker run -v <volume_name>:/path/in/container <image>` | Mounts a volume inside a container        |
 
 ---
 
-### Docker Compose
-| Command | Description |
-|----------|-------------|
-| `docker compose up` | Start services defined in `docker-compose.yml` |
-| `docker compose up -d` | Start services in detached mode |
-| `docker compose down` | Stop and remove all containers defined in compose file |
-| `docker compose ps` | List running services |
-| `docker compose logs` | Show logs of all services |
-| `docker compose build` | Build or rebuild services |
+# Networking
+
+Docker networking enables communication between containers and external systems.
+
+| Command                                       | Description                                |
+| --------------------------------------------- | ------------------------------------------ |
+| `docker network ls`                           | Lists available Docker networks            |
+| `docker network create <network_name>`        | Creates a custom network                   |
+| `docker network inspect <network_name>`       | Displays detailed network information      |
+| `docker network rm <network_name>`            | Removes a network                          |
+| `docker run --network <network_name> <image>` | Connects a container to a specific network |
 
 ---
 
-### Cleanup Commands
-| Command | Description |
-|----------|-------------|
-| `docker system prune` | Remove unused containers, images, and networks |
-| `docker container prune` | Remove all stopped containers |
-| `docker image prune` | Remove dangling (unused) images |
-| `docker volume prune` | Remove unused volumes |
+# Docker Compose
+
+Docker Compose allows defining and running multi-container applications using a configuration file.
+
+| Command                | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| `docker compose up`    | Starts services defined in `docker-compose.yml`       |
+| `docker compose up -d` | Starts services in detached mode                      |
+| `docker compose down`  | Stops and removes containers, networks, and resources |
+| `docker compose ps`    | Lists running services                                |
+| `docker compose logs`  | Displays logs from all services                       |
+| `docker compose build` | Builds or rebuilds service images                     |
 
 ---
 
-### Dockerfile Essentials
+# Cleanup Commands
 
-A basic **Dockerfile** example:
+These commands help remove unused resources to free disk space.
+
+| Command                  | Description                                     |
+| ------------------------ | ----------------------------------------------- |
+| `docker system prune`    | Removes unused containers, networks, and images |
+| `docker container prune` | Removes all stopped containers                  |
+| `docker image prune`     | Removes unused images                           |
+| `docker volume prune`    | Removes unused volumes                          |
+
+---
+
+# Dockerfile Example
+
+A simple example of a Dockerfile used to containerize a Node.js application.
+
 ```dockerfile
-# Use base image
+# Use official Node.js base image
 FROM node:18
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy files
+# Copy project files
 COPY . .
 
-# Install dependencies
+# Install project dependencies
 RUN npm install
 
-# Expose port
+# Expose application port
 EXPOSE 3000
 
-# Start application
+# Start the application
 CMD ["npm", "start"]
+```
+
+---
+
+# Additional Resources
+
+Official Docker Documentation
+[https://docs.docker.com/](https://docs.docker.com/)
+
+Docker Hub
+[https://hub.docker.com/](https://hub.docker.com/)
+
+Docker Compose Documentation
+[https://docs.docker.com/compose/](https://docs.docker.com/compose/)
+
+
+
+Ye sab add kar denge to aapka **DevOps GitHub repo bahut professional lagega**, jo internships aur recruiters ke liye bhi strong impression create karega.
