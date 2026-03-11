@@ -1,17 +1,130 @@
 # Linux Command Reference
 
-Linux is a powerful open-source operating system widely used in servers, cloud platforms, DevOps environments, and embedded systems. Most interactions with Linux systems are performed through the **command-line interface (CLI)** using the terminal.
+Linux is a powerful open-source operating system widely used in servers, cloud infrastructure, DevOps environments, cloud computing platforms, and embedded systems.
 
-This document provides a structured overview of commonly used Linux commands along with their purpose and usage.
+Most interactions with Linux systems are performed through the **Command Line Interface (CLI)** using a terminal. The CLI provides powerful utilities to manage files, processes, networks, packages, and system resources.
+
+This document provides a **structured overview of essential Linux concepts and commonly used commands** for developers, system administrators, and DevOps engineers.
 
 ---
 
-# 1. File and Directory Management
+# Table of Contents
+
+1. Linux Architecture
+2. Linux Architecture Diagram
+3. Linux File System Hierarchy
+4. File and Directory Management
+5. File Viewing and Editing
+6. File Permissions and Ownership
+7. File Searching and Text Processing
+8. System Information
+9. Process Management
+10. Package Management
+11. Networking Commands
+12. Disk and Storage Management
+13. Compression and Archiving
+14. Shell and I/O Redirection
+15. User and Group Management
+16. Service Management (systemd)
+17. Command Execution Diagrams
+18. Repository Preview
+19. Contributing
+20. Miscellaneous Commands
+
+---
+
+# 1. Linux Architecture
 
 ### Theory
 
-Linux stores all data in a **hierarchical file system** starting from the root directory `/`.
-Files and directories are organized in a tree-like structure.
+Linux follows a layered architecture that separates hardware from user applications.
+
+```
+Applications
+      ↓
+Shell
+      ↓
+Kernel
+      ↓
+Hardware
+```
+
+### Components
+
+**Kernel**
+
+The kernel is the core of the Linux operating system. It manages:
+
+* CPU scheduling
+* Memory management
+* Device drivers
+* File systems
+* Process management
+
+**Shell**
+
+The shell is a command interpreter that allows users to interact with the kernel using commands.
+
+Common shells:
+
+* Bash
+* Zsh
+* Fish
+
+Example:
+
+```
+echo "Hello Linux"
+```
+
+---
+
+# 2. Linux Architecture Diagram
+
+<div align="center">
+
+Linux Kernel and System Architecture
+<img width="800" height="500" alt="image" src="https://github.com/user-attachments/assets/1f7a4759-ec93-4a54-b4ab-0aae64de631b" />
+
+</div>
+
+This diagram shows how user applications communicate with hardware through the **shell and kernel layers**.
+
+---
+
+# 3. Linux File System Hierarchy
+
+### Theory
+
+Linux organizes files using a standardized directory structure known as the **Filesystem Hierarchy Standard (FHS)**.
+
+Important directories:
+
+| Directory | Description                     |
+| --------- | ------------------------------- |
+| `/`       | Root directory                  |
+| `/bin`    | Essential user binaries         |
+| `/etc`    | System configuration files      |
+| `/home`   | User home directories           |
+| `/var`    | Log files and variable data     |
+| `/tmp`    | Temporary files                 |
+| `/usr`    | User applications and utilities |
+| `/root`   | Root user home directory        |
+
+Example:
+
+```
+cd /home
+ls
+```
+
+---
+
+# 4. File and Directory Management
+
+### Theory
+
+Linux stores data in a hierarchical structure starting from the root directory `/`.
 
 Common operations include:
 
@@ -20,31 +133,29 @@ Common operations include:
 * Copying and moving files
 * Deleting files
 
-These operations are fundamental for working in Linux environments.
-
 ---
 
 ### Commands
 
-| Command                     | Description                          |
-| --------------------------- | ------------------------------------ |
-| `pwd`                       | Display current working directory    |
-| `ls`                        | List directory contents              |
-| `ls -l`                     | List files with detailed information |
-| `ls -a`                     | Show hidden files                    |
-| `cd <directory>`            | Change directory                     |
-| `cd ..`                     | Move to parent directory             |
-| `mkdir <dir>`               | Create a directory                   |
-| `mkdir -p <dir>`            | Create nested directories            |
-| `rmdir <dir>`               | Remove an empty directory            |
-| `rm <file>`                 | Delete a file                        |
-| `rm -r <dir>`               | Delete directory recursively         |
-| `rm -rf <dir>`              | Force delete directory               |
-| `cp <source> <destination>` | Copy files or directories            |
-| `cp -r <dir>`               | Copy directories recursively         |
-| `mv <source> <destination>` | Move or rename files                 |
-| `touch <file>`              | Create an empty file                 |
-| `stat <file>`               | Display file metadata                |
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `pwd`             | Display current directory    |
+| `ls`              | List directory contents      |
+| `ls -l`           | Detailed list                |
+| `ls -a`           | Show hidden files            |
+| `cd <dir>`        | Change directory             |
+| `cd ..`           | Move to parent directory     |
+| `mkdir <dir>`     | Create directory             |
+| `mkdir -p <dir>`  | Create nested directories    |
+| `rmdir <dir>`     | Remove empty directory       |
+| `rm <file>`       | Remove file                  |
+| `rm -r <dir>`     | Remove directory recursively |
+| `rm -rf <dir>`    | Force delete directory       |
+| `cp <src> <dest>` | Copy file                    |
+| `cp -r <dir>`     | Copy directory               |
+| `mv <src> <dest>` | Move or rename file          |
+| `touch <file>`    | Create file                  |
+| `stat <file>`     | Show file metadata           |
 
 Example:
 
@@ -57,29 +168,24 @@ ls -l
 
 ---
 
-# 2. File Viewing and Editing
+# 5. File Viewing and Editing
 
 ### Theory
 
-Linux provides multiple utilities to read, inspect, and edit files directly from the terminal.
-These tools are particularly useful for working with **configuration files, logs, and scripts** on servers.
-
-Some tools allow simple viewing, while others provide full text editing capabilities.
-
----
+Linux provides utilities to inspect and modify files directly from the terminal. These tools are commonly used to analyze logs and edit configuration files.
 
 ### Commands
 
-| Command          | Description                       |
-| ---------------- | --------------------------------- |
-| `cat <file>`     | Display entire file contents      |
-| `less <file>`    | View file page by page            |
-| `more <file>`    | Basic pager for viewing files     |
-| `head <file>`    | Show first 10 lines               |
-| `tail <file>`    | Show last 10 lines                |
-| `tail -f <file>` | Monitor file updates in real time |
-| `nano <file>`    | Edit file using Nano editor       |
-| `vim <file>`     | Edit file using Vim editor        |
+| Command          | Description         |
+| ---------------- | ------------------- |
+| `cat <file>`     | Display file        |
+| `less <file>`    | Scroll through file |
+| `more <file>`    | Basic file viewer   |
+| `head <file>`    | First 10 lines      |
+| `tail <file>`    | Last 10 lines       |
+| `tail -f <file>` | Monitor logs        |
+| `nano <file>`    | Simple editor       |
+| `vim <file>`     | Advanced editor     |
 
 Example:
 
@@ -87,48 +193,44 @@ Example:
 tail -f system.log
 ```
 
-This is commonly used to **monitor log files in real time**.
-
 ---
 
-# 3. File Permissions and Ownership
+# 6. File Permissions and Ownership
 
 ### Theory
 
-Linux uses a **permission-based security model** to control access to files and directories.
+Linux uses a permission system to control access to files.
 
-Each file has three types of permissions:
+Permission types:
 
-* **Read (r)** – view file contents
-* **Write (w)** – modify the file
-* **Execute (x)** – run the file as a program
+* **Read (r)**
+* **Write (w)**
+* **Execute (x)**
 
-Permissions are applied to three categories:
+Permission categories:
 
 * Owner
 * Group
 * Others
 
-Example permission format:
+Example:
 
 ```
 -rwxr-xr--
 ```
 
----
-
 ### Commands
 
-| Command                       | Description                  |
-| ----------------------------- | ---------------------------- |
-| `chmod <permissions> <file>`  | Change file permissions      |
-| `chmod +x <file>`             | Make file executable         |
-| `chown <user>:<group> <file>` | Change file owner            |
-| `chgrp <group> <file>`        | Change file group            |
-| `ls -l`                       | View permissions             |
-| `umask`                       | Show default permission mask |
+| Command    | Description             |
+| ---------- | ----------------------- |
+| `chmod`    | Change permissions      |
+| `chmod +x` | Make executable         |
+| `chown`    | Change file owner       |
+| `chgrp`    | Change group            |
+| `ls -l`    | View permissions        |
+| `umask`    | Default permission mask |
 
-Example:
+Example
 
 ```
 chmod 755 script.sh
@@ -136,32 +238,27 @@ chmod 755 script.sh
 
 ---
 
-# 4. File Searching and Text Processing
+# 7. File Searching and Text Processing
 
 ### Theory
 
-Linux provides powerful tools for searching files and analyzing text data.
-These tools are widely used in **system administration, log analysis, and scripting**.
+Linux provides powerful utilities for searching files and processing text.
 
-Utilities such as `grep`, `find`, `awk`, and `sed` allow efficient processing of large text files.
-
----
+These commands are widely used for **log analysis, scripting, and automation**.
 
 ### Commands
 
-| Command                    | Description                      |
-| -------------------------- | -------------------------------- |
-| `find <path> -name <file>` | Search files by name             |
-| `find <path> -type f`      | Search only files                |
-| `grep <pattern> <file>`    | Search text within file          |
-| `grep -r <pattern> <dir>`  | Recursive text search            |
-| `locate <file>`            | Quickly find file paths          |
-| `which <command>`          | Locate executable                |
-| `whereis <command>`        | Locate binary and manual         |
-| `awk`                      | Pattern scanning and processing  |
-| `sed`                      | Stream editor for modifying text |
+| Command   | Description        |
+| --------- | ------------------ |
+| `find`    | Search files       |
+| `grep`    | Search text        |
+| `locate`  | Fast file search   |
+| `which`   | Locate executable  |
+| `whereis` | Locate binaries    |
+| `awk`     | Pattern processing |
+| `sed`     | Stream editing     |
 
-Example:
+Example
 
 ```
 grep "error" server.log
@@ -169,159 +266,263 @@ grep "error" server.log
 
 ---
 
-# 5. System Information
+# 8. System Information
 
-### Theory
-
-Linux provides various commands to retrieve system information such as **CPU details, memory usage, uptime, and active users**.
-
-These commands are useful for monitoring system health and troubleshooting performance issues.
-
----
-
-### Commands
-
-| Command        | Description                |
-| -------------- | -------------------------- |
-| `uname -a`     | Display system information |
-| `hostname`     | Show system hostname       |
-| `uptime`       | Show system running time   |
-| `whoami`       | Show current user          |
-| `who`          | Show logged-in users       |
-| `id`           | Display user ID and groups |
-| `lscpu`        | CPU information            |
-| `free -h`      | Memory usage               |
-| `df -h`        | Disk space usage           |
-| `du -sh <dir>` | Directory size             |
+| Command    | Description    |
+| ---------- | -------------- |
+| `uname -a` | System info    |
+| `hostname` | Host name      |
+| `uptime`   | System uptime  |
+| `whoami`   | Current user   |
+| `who`      | Logged users   |
+| `id`       | User ID        |
+| `lscpu`    | CPU info       |
+| `free -h`  | Memory usage   |
+| `df -h`    | Disk usage     |
+| `du -sh`   | Directory size |
 
 ---
 
-# 6. Process Management
+# 9. Process Management
 
 ### Theory
 
 A **process** is a running instance of a program.
-Linux allows users to monitor, control, and terminate processes using various commands.
 
-This is essential for managing applications and server workloads.
-
----
+Linux provides commands to monitor and control processes.
 
 ### Commands
 
-| Command         | Description                  |
-| --------------- | ---------------------------- |
-| `ps`            | Show running processes       |
-| `ps aux`        | List all processes           |
-| `top`           | Real-time process monitoring |
-| `htop`          | Interactive process viewer   |
-| `kill <PID>`    | Terminate process            |
-| `kill -9 <PID>` | Force kill process           |
-| `pkill <name>`  | Kill process by name         |
-| `jobs`          | Show background jobs         |
-| `bg`            | Resume job in background     |
-| `fg`            | Bring job to foreground      |
+| Command   | Description             |
+| --------- | ----------------------- |
+| `ps`      | Show processes          |
+| `ps aux`  | Detailed process list   |
+| `top`     | Real-time monitoring    |
+| `htop`    | Interactive monitor     |
+| `kill`    | Stop process            |
+| `kill -9` | Force stop              |
+| `pkill`   | Kill by name            |
+| `jobs`    | Show background jobs    |
+| `bg`      | Resume background job   |
+| `fg`      | Bring job to foreground |
 
 ---
 
-# 7. Package Management (Debian/Ubuntu)
+# 10. Package Management
 
 ### Theory
 
-Package managers are used to install, update, and remove software from the system.
+Package managers install, update, and remove software.
 
-Ubuntu and Debian-based systems use **APT (Advanced Package Tool)** for managing software packages.
-
----
+Debian-based systems use **APT**.
 
 ### Commands
 
-| Command                      | Description                       |
-| ---------------------------- | --------------------------------- |
-| `sudo apt update`            | Update package list               |
-| `sudo apt upgrade`           | Upgrade installed packages        |
-| `sudo apt install <package>` | Install package                   |
-| `sudo apt remove <package>`  | Remove package                    |
-| `sudo apt purge <package>`   | Remove package with configuration |
-| `sudo apt autoremove`        | Remove unused dependencies        |
-| `apt search <package>`       | Search package                    |
+| Command          | Description         |
+| ---------------- | ------------------- |
+| `apt update`     | Update packages     |
+| `apt upgrade`    | Upgrade system      |
+| `apt install`    | Install software    |
+| `apt remove`     | Remove software     |
+| `apt purge`      | Remove config files |
+| `apt autoremove` | Remove dependencies |
+| `apt search`     | Search packages     |
 
 ---
 
-# 8. Networking Commands
+# 11. Networking Commands
 
-### Theory
-
-Networking commands are used to diagnose connectivity issues, manage network interfaces, and communicate with remote systems.
-
-These commands are essential for **system administrators and DevOps engineers**.
-
----
-
-### Commands
-
-| Command                           | Description                    |
-| --------------------------------- | ------------------------------ |
-| `ping <host>`                     | Test connectivity              |
-| `ip a`                            | Display network interfaces     |
-| `ip route`                        | Show routing table             |
-| `netstat -tuln`                   | Show open ports                |
-| `ss -tuln`                        | Modern replacement for netstat |
-| `curl <url>`                      | Fetch data from URL            |
-| `wget <url>`                      | Download files                 |
-| `ssh <user>@<host>`               | Remote login                   |
-| `scp <file> <user>@<host>:<path>` | Secure file transfer           |
+| Command         | Description       |
+| --------------- | ----------------- |
+| `ping`          | Test connectivity |
+| `ip a`          | Show interfaces   |
+| `ip route`      | Routing table     |
+| `netstat -tuln` | Show ports        |
+| `ss -tuln`      | Modern netstat    |
+| `curl`          | Fetch web content |
+| `wget`          | Download files    |
+| `ssh`           | Remote login      |
+| `scp`           | Secure copy       |
 
 ---
 
-# 9. File Compression and Archiving
+# 12. Disk and Storage Management
 
-### Theory
-
-Compression utilities reduce file size and allow multiple files to be bundled together into a single archive.
-
-This is useful for **backups, distribution, and storage optimization**.
-
----
-
-### Commands
-
-| Command                            | Description                |
-| ---------------------------------- | -------------------------- |
-| `tar -cvf archive.tar <files>`     | Create tar archive         |
-| `tar -xvf archive.tar`             | Extract tar archive        |
-| `tar -czvf archive.tar.gz <files>` | Create compressed archive  |
-| `tar -xzvf archive.tar.gz`         | Extract compressed archive |
-| `zip archive.zip <files>`          | Create zip archive         |
-| `unzip archive.zip`                | Extract zip archive        |
-| `gzip <file>`                      | Compress file              |
-| `gunzip <file.gz>`                 | Decompress file            |
+| Command    | Description        |
+| ---------- | ------------------ |
+| `lsblk`    | List disks         |
+| `df -h`    | Disk usage         |
+| `du -sh`   | Directory size     |
+| `mount`    | Mount filesystem   |
+| `umount`   | Unmount filesystem |
+| `fdisk -l` | Disk partitions    |
 
 ---
 
-# 10. Miscellaneous Commands
+# 13. Compression and Archiving
 
-### Theory
-
-These commands provide general utilities for working with the terminal environment.
+| Command     | Description         |
+| ----------- | ------------------- |
+| `tar -cvf`  | Create tar archive  |
+| `tar -xvf`  | Extract tar         |
+| `tar -czvf` | Create gzip archive |
+| `tar -xzvf` | Extract gzip        |
+| `zip`       | Create zip          |
+| `unzip`     | Extract zip         |
+| `gzip`      | Compress file       |
+| `gunzip`    | Decompress file     |
 
 ---
 
-### Commands
+# 14. Shell and I/O Redirection
 
-| Command         | Description                |
-| --------------- | -------------------------- |
-| `date`          | Show current date and time |
-| `cal`           | Display calendar           |
-| `history`       | Show command history       |
-| `clear`         | Clear terminal             |
-| `echo`          | Print text or variables    |
-| `alias`         | Create command shortcut    |
-| `man <command>` | Show manual page           |
+Linux allows redirecting command output.
+
+| Symbol | Description     |             |
+| ------ | --------------- | ----------- |
+| `>`    | Redirect output |             |
+| `>>`   | Append output   |             |
+| `      | `               | Pipe output |
+| `<`    | Redirect input  |             |
 
 Example:
 
 ```
+ls > files.txt
+cat log.txt | grep error
+```
+
+---
+
+# 15. User and Group Management
+
+| Command    | Description     |
+| ---------- | --------------- |
+| `adduser`  | Create user     |
+| `userdel`  | Delete user     |
+| `usermod`  | Modify user     |
+| `groupadd` | Create group    |
+| `groupdel` | Delete group    |
+| `passwd`   | Change password |
+
+---
+
+# 16. Service Management (systemd)
+
+Modern Linux systems use **systemd**.
+
+| Command             | Description     |
+| ------------------- | --------------- |
+| `systemctl start`   | Start service   |
+| `systemctl stop`    | Stop service    |
+| `systemctl restart` | Restart service |
+| `systemctl status`  | Check status    |
+| `systemctl enable`  | Start on boot   |
+| `systemctl disable` | Disable on boot |
+
+Example
+
+```
+systemctl restart nginx
+```
+
+---
+
+# 17. Command Execution Diagram
+
+Linux Command Execution Flow
+<p align="center">
+
+<img width="450" height="430" alt="image" src="https://github.com/user-attachments/assets/2d9b582b-08a3-488b-8111-9a6aafd8652d" />
+
+</p>
+
+Command flow:
+
+```
+User Command
+     ↓
+Shell
+     ↓
+Kernel
+     ↓
+Hardware
+```
+
+---
+
+# 18. Repository Preview
+
+<div align="center">
+
+Linux Terminal Preview
+
+[https://upload.wikimedia.org/wikipedia/commons/5/5f/Linux_terminal.png](https://upload.wikimedia.org/wikipedia/commons/5/5f/Linux_terminal.png)
+
+</div>
+
+<div align="center">
+
+Linux Command Line Interface
+
+[https://upload.wikimedia.org/wikipedia/commons/4/4b/Unix_command_line.png](https://upload.wikimedia.org/wikipedia/commons/4/4b/Unix_command_line.png)
+
+</div>
+
+---
+
+# 19. Contributing
+
+Contributions are welcome to improve this repository.
+
+Steps to contribute:
+
+1. Fork the repository
+
+2. Create a new branch
+
+```
+git checkout -b feature-update
+```
+
+3. Commit changes
+
+```
+git commit -m "Added new Linux command examples"
+```
+
+4. Push to your fork
+
+```
+git push origin feature-update
+```
+
+5. Open a Pull Request
+
+Please ensure:
+
+* Commands are accurate
+* Formatting remains consistent
+* Examples are tested
+
+---
+
+# 20. Miscellaneous Commands
+
+| Command   | Description      |
+| --------- | ---------------- |
+| `date`    | Show date        |
+| `cal`     | Show calendar    |
+| `history` | Command history  |
+| `clear`   | Clear terminal   |
+| `echo`    | Print text       |
+| `alias`   | Command shortcut |
+| `man`     | Manual pages     |
+
+Example
+
+```
 man ls
 ```
+
 
