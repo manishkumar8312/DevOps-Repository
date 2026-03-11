@@ -455,17 +455,25 @@ Hardware
 
 <div align="center">
 
+<table>
+<tr>
+<td align="center">
+
 Linux Terminal Preview
 
-[https://upload.wikimedia.org/wikipedia/commons/5/5f/Linux_terminal.png](https://upload.wikimedia.org/wikipedia/commons/5/5f/Linux_terminal.png)
+<img width="450" alt="Linux Terminal Preview" src="https://github.com/user-attachments/assets/2de36df1-b97e-46af-b2e1-deb94008dfc3"/>
 
-</div>
+</td>
 
-<div align="center">
+<td align="center">
 
 Linux Command Line Interface
 
-[https://upload.wikimedia.org/wikipedia/commons/4/4b/Unix_command_line.png](https://upload.wikimedia.org/wikipedia/commons/4/4b/Unix_command_line.png)
+<img width="450" alt="Linux Command Line Interface" src="https://github.com/user-attachments/assets/8d898e4b-5d78-4c59-ae27-30cb1d53508a"/>
+
+</td>
+</tr>
+</table>
 
 </div>
 
