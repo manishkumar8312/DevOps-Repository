@@ -1,201 +1,299 @@
-# Git & GitHub Basic Commands
+# Git & GitHub Command Reference Guide
 
-Git is a powerful version control system used to track changes and collaborate on projects efficiently.  
-This document provides a comprehensive list of essential Git & GitHub commands for development and DevOps workflows.
+Git is a **distributed version control system** that enables developers to track changes in code, collaborate with teams, and manage project history efficiently.
 
----
+Git is widely used in modern **software development, DevOps workflows, CI/CD pipelines, and open-source collaboration**.
 
-## Initialization & Configuration
-Basic commands to set up Git on your system, configure identity, and start or clone repositories.
-
-| Command | Description |
-|--------|-------------|
-| `git init` | Initialize a new Git repository |
-| `git clone <repo-url>` | Clone a repository |
-| `git config --global user.name "<your-name>"` | Set global username |
-| `git config --global user.email "<your-email>"` | Set global email |
-| `git config --list` | Display config settings |
+This guide provides a **comprehensive reference of essential Git and GitHub commands**, organized by common workflows such as repository setup, file tracking, commits, branching, rebasing, and collaboration.
 
 ---
 
-## Working With Files
-Commands used to track, untrack, restore, delete, and manage files inside your Git working directory and staging area.
+# Table of Contents
 
-| Command | Description |
-|--------|-------------|
-| `git status` | Show file status |
-| `git add <file>` | Add file to staging |
-| `git add .` | Add all files to staging |
-| `git reset <file>` | Unstage a file |
-| `git rm <file>` | Delete a file and stage removal |
-| `git restore <file>` | Restore file from last commit |
-| `git restore --staged <file>` | Unstage changes |
-| `git mv <old> <new>` | Move or rename a file |
-
----
-
-## Commit Operations
-Commands related to creating commits, viewing commit history, and inspecting detailed changes.
-
-| Command | Description |
-|--------|-------------|
-| `git commit -m "<message>"` | Commit staged changes |
-| `git commit -am "<message>"` | Add & commit tracked files |
-| `git log` | View commit history |
-| `git log --oneline` | Short commit log |
-| `git show <commit>` | Show details of a commit |
+1. Initialization & Configuration
+2. Working with Files
+3. Commit Operations
+4. Branching
+5. Pushing & Pulling
+6. Reset & Revert
+7. Cleanup
+8. GitHub CLI Commands
+9. Rebase
+10. Stash Commands
+11. Tagging (Release Management)
+12. Cherry Pick
+13. Submodules
+14. Inspect & Search
+15. Additional Useful Commands
+16. Best Practices
+17. Additional Learning Resources
 
 ---
 
-## Branching
-Commands to create, switch, merge, and delete branches for parallel development workflows.
+# 1. Initialization & Configuration
 
-| Command | Description |
-|--------|-------------|
-| `git branch` | List branches |
-| `git branch <name>` | Create a new branch |
-| `git checkout <branch>` | Switch to a branch |
-| `git checkout -b <name>` | Create and switch |
-| `git switch <branch>` | Switch to a branch |
-| `git merge <branch>` | Merge a branch into current |
-| `git branch -d <branch>` | Delete a branch |
+These commands help you **initialize repositories and configure Git identity**.
 
----
+| Command                                    | Description                     |
+| ------------------------------------------ | ------------------------------- |
+| `git init`                                 | Initialize a new Git repository |
+| `git clone <repo-url>`                     | Clone an existing repository    |
+| `git config --global user.name "<name>"`   | Set global username             |
+| `git config --global user.email "<email>"` | Set global email                |
+| `git config --list`                        | View all configuration settings |
 
-## Pushing & Pulling
-Commands used to sync changes with remote repositories—push your updates or fetch/pull others’ work.
+Example
 
-| Command | Description |
-|--------|-------------|
-| `git remote -v` | Show remote URLs |
-| `git remote add origin <url>` | Add a remote |
-| `git push -u origin <branch>` | Push and set upstream |
-| `git push` | Push changes |
-| `git pull` | Pull latest changes |
-| `git fetch` | Fetch updates only |
-| `git push --force-with-lease` | Safe force push |
-| `git pull --ff-only` | Fast-forward only pull |
+```bash
+git config --global user.name "Manish Kumar Sah"
+git config --global user.email "your-email@example.com"
+```
 
 ---
 
-## Reset & Revert
-Commands that manipulate commit history or undo changes without losing your working directory state.
+# 2. Working With Files
 
-| Command | Description |
-|--------|-------------|
-| `git reset --soft <commit>` | Move HEAD, keep staged changes |
-| `git reset --hard <commit>` | Reset and remove local changes |
-| `git revert <commit>` | Undo commit with a new commit |
-| `git checkout <commit>` | Checkout any commit |
-| `git checkout HEAD~1` | Move to previous commit |
+These commands manage **file tracking and staging area operations**.
 
----
-
-## Cleanup
-Commands to remove untracked files, reset your workspace, and clean up unnecessary changes safely.
-
-| Command | Description |
-|--------|-------------|
-| `git clean -n` | Preview files to be deleted |
-| `git clean -f` | Delete untracked files |
-| `git clean -fd` | Delete untracked files & directories |
-| `git reset --hard` | Discard all local changes |
+| Command                       | Description                    |
+| ----------------------------- | ------------------------------ |
+| `git status`                  | Show file status               |
+| `git add <file>`              | Add specific file to staging   |
+| `git add .`                   | Add all files to staging       |
+| `git reset <file>`            | Unstage a file                 |
+| `git rm <file>`               | Remove file and stage deletion |
+| `git restore <file>`          | Restore file from last commit  |
+| `git restore --staged <file>` | Unstage changes                |
+| `git mv <old> <new>`          | Rename or move file            |
 
 ---
 
-## GitHub CLI Commands
-Commands from GitHub CLI (gh) to interact with GitHub directly—creating repos, PRs, issues, and authentication.
+# 3. Commit Operations
 
-| Command | Description |
-|--------|-------------|
-| `gh auth login` | Authenticate to GitHub |
-| `gh repo create` | Create a new repository |
-| `gh issue list` | List issues |
-| `gh pr create` | Create a pull request |
-| `gh pr merge <id>` | Merge a pull request |
+Commits capture a **snapshot of the project history**.
 
----
+| Command                      | Description                    |
+| ---------------------------- | ------------------------------ |
+| `git commit -m "<message>"`  | Commit staged changes          |
+| `git commit -am "<message>"` | Stage and commit tracked files |
+| `git log`                    | View commit history            |
+| `git log --oneline`          | Compact commit log             |
+| `git show <commit>`          | Show detailed commit changes   |
 
-## Rebase
-Commands for rewriting commit history by moving or reorganizing commits, typically used for cleaner branch histories.
+Example
 
-| Command | Description |
-|--------|-------------|
-| `git rebase <branch>` | Rebase current branch onto another |
-| `git rebase --continue` | Continue after resolving conflicts |
-| `git rebase --abort` | Abort rebase |
-| `git rebase --skip` | Skip current patch |
-| `git rebase -i <commit>` | Interactive rebase |
-| `git pull --rebase` | Pull with rebase |
-| `git rebase --onto <newbase> <upstream> <branch>` | Advanced rebase operation |
-| `git reflog` | View reference logs for recovery |
+```bash
+git add .
+git commit -m "Add authentication module"
+```
 
 ---
 
-## Stash Commands
-Commands to temporarily save uncommitted changes so you can work on something else and restore them later.
+# 4. Branching
 
-| Command | Description |
-|--------|-------------|
-| `git stash` | Save uncommitted changes |
-| `git stash list` | Show all stashes |
-| `git stash apply` | Reapply latest stash |
-| `git stash pop` | Apply and remove latest stash |
-| `git stash drop` | Delete a specific stash |
+Branches allow **parallel development without affecting the main codebase**.
 
----
+| Command                  | Description                    |
+| ------------------------ | ------------------------------ |
+| `git branch`             | List branches                  |
+| `git branch <name>`      | Create a new branch            |
+| `git checkout <branch>`  | Switch branch                  |
+| `git checkout -b <name>` | Create and switch              |
+| `git switch <branch>`    | Switch branch (modern command) |
+| `git merge <branch>`     | Merge branch into current      |
+| `git branch -d <branch>` | Delete branch                  |
 
-## Tagging (Release Management)
-Commands for creating, managing, and pushing tags used in release versions and milestones.
+Example
 
-| Command | Description |
-|--------|-------------|
-| `git tag` | List tags |
-| `git tag <tag>` | Create a lightweight tag |
-| `git tag -a <tag> -m "<msg>"` | Create an annotated tag |
-| `git push origin <tag>` | Push a single tag |
-| `git push --tags` | Push all tags |
-| `git tag -d <tag>` | Delete local tag |
-| `git push origin --delete <tag>` | Delete remote tag |
+```bash
+git checkout -b feature-login
+```
 
 ---
 
-## Cherry-pick
-Commands to pick specific commits from one branch and apply them on another without merging everything.
+# 5. Pushing & Pulling
 
-| Command | Description |
-|--------|-------------|
-| `git cherry-pick <commit>` | Apply a specific commit |
-| `git cherry-pick --abort` | Abort cherry-pick |
+These commands **synchronize local repositories with remote repositories**.
+
+| Command                       | Description                   |
+| ----------------------------- | ----------------------------- |
+| `git remote -v`               | Show remote repository URLs   |
+| `git remote add origin <url>` | Add remote repository         |
+| `git push -u origin <branch>` | Push branch and set upstream  |
+| `git push`                    | Push local commits            |
+| `git pull`                    | Pull latest changes           |
+| `git fetch`                   | Fetch updates without merging |
+| `git push --force-with-lease` | Safe force push               |
+| `git pull --ff-only`          | Fast-forward only pull        |
+
+---
+
+# 6. Reset & Revert
+
+These commands help **undo changes or modify commit history**.
+
+| Command                     | Description                          |
+| --------------------------- | ------------------------------------ |
+| `git reset --soft <commit>` | Reset HEAD but keep staged changes   |
+| `git reset --hard <commit>` | Reset completely and discard changes |
+| `git revert <commit>`       | Undo commit by creating a new commit |
+| `git checkout <commit>`     | Checkout a specific commit           |
+| `git checkout HEAD~1`       | Move to previous commit              |
+
+---
+
+# 7. Cleanup
+
+Used to **remove untracked files and clean workspace**.
+
+| Command            | Description                  |
+| ------------------ | ---------------------------- |
+| `git clean -n`     | Preview files to delete      |
+| `git clean -f`     | Delete untracked files       |
+| `git clean -fd`    | Delete files and directories |
+| `git reset --hard` | Discard all local changes    |
+
+---
+
+# 8. GitHub CLI Commands
+
+GitHub CLI allows interaction with GitHub **directly from the terminal**.
+
+| Command            | Description                 |
+| ------------------ | --------------------------- |
+| `gh auth login`    | Authenticate GitHub account |
+| `gh repo create`   | Create repository           |
+| `gh issue list`    | View issues                 |
+| `gh pr create`     | Create pull request         |
+| `gh pr merge <id>` | Merge pull request          |
+
+---
+
+# 9. Rebase
+
+Rebase rewrites commit history to create a **cleaner linear history**.
+
+| Command                                           | Description                        |
+| ------------------------------------------------- | ---------------------------------- |
+| `git rebase <branch>`                             | Rebase onto another branch         |
+| `git rebase --continue`                           | Continue after resolving conflicts |
+| `git rebase --abort`                              | Abort rebase                       |
+| `git rebase --skip`                               | Skip patch                         |
+| `git rebase -i <commit>`                          | Interactive rebase                 |
+| `git pull --rebase`                               | Pull using rebase                  |
+| `git rebase --onto <newbase> <upstream> <branch>` | Advanced rebase                    |
+| `git reflog`                                      | View reference history             |
+
+---
+
+# 10. Stash Commands
+
+Used to **temporarily save uncommitted changes**.
+
+| Command           | Description            |
+| ----------------- | ---------------------- |
+| `git stash`       | Save current changes   |
+| `git stash list`  | Show stashes           |
+| `git stash apply` | Apply stash            |
+| `git stash pop`   | Apply and remove stash |
+| `git stash drop`  | Delete stash           |
+
+---
+
+# 11. Tagging (Release Management)
+
+Tags mark **release versions of the project**.
+
+| Command                          | Description            |
+| -------------------------------- | ---------------------- |
+| `git tag`                        | List tags              |
+| `git tag <tag>`                  | Create lightweight tag |
+| `git tag -a <tag> -m "<msg>"`    | Annotated tag          |
+| `git push origin <tag>`          | Push tag               |
+| `git push --tags`                | Push all tags          |
+| `git tag -d <tag>`               | Delete local tag       |
+| `git push origin --delete <tag>` | Delete remote tag      |
+
+---
+
+# 12. Cherry Pick
+
+Cherry-pick allows applying **specific commits from another branch**.
+
+| Command                      | Description             |
+| ---------------------------- | ----------------------- |
+| `git cherry-pick <commit>`   | Apply specific commit   |
+| `git cherry-pick --abort`    | Abort operation         |
 | `git cherry-pick --continue` | Continue after conflict |
 
 ---
 
-## Submodules
-Commands to include external repositories inside your project and keep them updated.
+# 13. Submodules
 
-| Command | Description |
-|--------|-------------|
-| `git submodule add <repo> <path>` | Add a submodule |
-| `git submodule update --init` | Initialize submodules |
-| `git submodule sync` | Synchronize submodule URLs |
+Submodules allow including **external repositories inside your project**.
 
----
-
-## Inspect & Search
-Commands used to analyze repository changes, find who modified what, and search within codebases.
-
-| Command | Description |
-|--------|-------------|
-| `git blame <file>` | Show who modified each line |
-| `git grep "<text>"` | Search text inside repository |
-| `git shortlog -sn` | Show contributor commit counts |
+| Command                           | Description           |
+| --------------------------------- | --------------------- |
+| `git submodule add <repo> <path>` | Add submodule         |
+| `git submodule update --init`     | Initialize submodules |
+| `git submodule sync`              | Sync URLs             |
 
 ---
 
-## Additional Useful Tips
+# 14. Inspect & Search
+
+Useful for **analyzing repository history and code changes**.
+
+| Command             | Description                    |
+| ------------------- | ------------------------------ |
+| `git blame <file>`  | Show line modification history |
+| `git grep "<text>"` | Search text in repository      |
+| `git shortlog -sn`  | Contributor commit count       |
+
+---
+
+# 15. Additional Useful Commands
 
 ```bash
-git add -p        # Interactive staging
-git diff          # View unstaged changes
-git diff --staged # View staged changes
+git add -p           # Interactive staging
+git diff             # Show unstaged changes
+git diff --staged    # Show staged changes
+git reflog           # View reference logs
+git stash branch     # Create branch from stash
+git bisect           # Find commit causing bug
+```
+
+---
+
+# 16. Best Practices
+```
+✔ Write meaningful commit messages 
+✔ Use feature branches for development
+✔ Avoid force pushing to shared branches
+✔ Use `.gitignore` for unnecessary files
+✔ Pull frequently to avoid merge conflicts
+✔ Prefer `git pull --rebase` for cleaner history
+```
+---
+
+# 17. Additional Learning Resources
+
+Official Documentation
+
+* [https://git-scm.com/docs](https://git-scm.com/docs)
+* [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2)
+
+Interactive Learning
+
+* [https://learngitbranching.js.org](https://learngitbranching.js.org)
+* [https://ohmygit.org](https://ohmygit.org)
+
+GitHub Learning Resources
+
+* [https://docs.github.com](https://docs.github.com)
+* [https://skills.github.com](https://skills.github.com)
+
+Practice Platforms
+
+* [https://www.codecademy.com/learn/learn-git](https://www.codecademy.com/learn/learn-git)
+* [https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials)
