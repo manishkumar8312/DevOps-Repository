@@ -2,79 +2,59 @@
 
 ## 1. Purpose
 
-This repository is created to share **DevOps learning resources, notes, and practical implementations** including topics like Linux, Docker, Kubernetes, CI/CD, 
-Terraform, networking, and monitoring.To maintain a **professional, respectful, and collaborative environment**, all contributors are expected to follow this 
-Code of Conduct.
+This repository shares **DevOps learning resources, notes, and practical implementations** covering topics such as Linux, Docker, Kubernetes, CI/CD, Terraform, networking, and monitoring.
+
+To maintain a **respectful and collaborative environment**, all contributors are expected to follow this Code of Conduct.
 
 ---
 
 ## 2. Expected Behavior
 
-Contributors are encouraged to:
+Contributors should:
 
-* Be respectful and professional in all discussions
-* Share knowledge that helps others learn DevOps
+* Be respectful and professional in discussions
+* Share helpful knowledge related to DevOps
 * Provide constructive feedback on issues and pull requests
-* Write clear and well-documented code or notes
-* Help maintain a positive learning environment
+* Write clear and well-structured documentation
 
 ---
 
 ## 3. Unacceptable Behavior
 
-The following behaviors are not allowed in this repository:
+The following behaviors are not allowed:
 
 * Harassment, discrimination, or offensive language
 * Personal attacks or disrespectful comments
-* Spamming issues or pull requests
-* Uploading irrelevant or malicious content
-* Plagiarism without proper credit
+* Spam or irrelevant pull requests/issues
+* Uploading malicious or plagiarized content
 
 ---
 
 ## 4. Contribution Guidelines
 
-When contributing to this repository:
+When contributing:
 
 * Follow the **existing documentation structure**
-* Keep notes **clear, structured, and educational**
+* Keep content **clear and educational**
 * Use meaningful commit messages
-* Ensure commands and scripts are **tested before submission**
-* Update documentation if required
+* Ensure commands and examples are **tested**
 
-Example commit message format:
+Example:
 
 ```
-Added Kubernetes deployment commands
-Improved Docker container examples
-Updated CI/CD pipeline explanation
+Add Kubernetes deployment commands
+Improve Docker documentation
+Update CI/CD explanation
 ```
 
 ---
 
-## 5. Reporting Issues
+## 5. Maintainer Rights
 
-If you find inappropriate behavior or content:
-
-* Open an **issue in the repository**
-* Clearly describe the problem
-* Maintain respectful communication
-
-All reports will be reviewed and appropriate action will be taken.
+Maintainers may edit, reject, or remove contributions that violate this Code of Conduct to maintain the quality of the repository.
 
 ---
 
-## 6. Maintainer Responsibilities
+## 6. Acknowledgement
 
-The repository maintainer has the right to:
-
-* Edit or remove content that violates this Code of Conduct
-* Reject pull requests that do not follow repository standards
-* Maintain the quality and structure of the project
-
----
-
-## 7. Acknowledgement
-
-By participating in this repository, contributors agree to follow this Code of Conduct and help maintain a respectful learning environment for everyone.
-
+By contributing to this repository, you agree to follow this Code of Conduct and help maintain a positive learning environment.
