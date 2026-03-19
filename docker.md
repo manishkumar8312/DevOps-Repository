@@ -426,4 +426,6 @@ Docker Hub
 Docker Compose Documentation
 [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
 
-Add a Star⭐ if you find this repository helpful.
+# Support
+If this repository adds value to your learning, consider giving it a ⭐ to show your support.
+
