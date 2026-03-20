@@ -2,7 +2,8 @@
 
 ## 1. Purpose
 
-This repository shares **DevOps learning resources, notes, and practical implementations** covering topics such as Linux, Docker, Kubernetes, CI/CD, Terraform, networking, and monitoring.
+This repository shares **DevOps learning resources, notes, and practical implementations** covering topics such as Linux, Docker, 
+Kubernetes, CI/CD, Terraform, networking, and monitoring.
 
 To maintain a **respectful and collaborative environment**, all contributors are expected to follow this Code of Conduct.
 
