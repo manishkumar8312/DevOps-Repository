@@ -2,34 +2,29 @@
 
 ## Chapter 1: Introduction to Linux
 
-* Definition and history of Linux (Unix, GNU, Linus Torvalds)
-* Open source philosophy and licensing (GPL, MIT)
+* History and philosophy (Unix, GNU, Linus Torvalds)
+* Open source licensing (GPL)
 * Linux kernel vs distributions
-* Popular distributions: Ubuntu, Fedora, Debian, CentOS, Arch, openSUSE
-* Linux use cases: servers, embedded systems, desktops, cloud, containers
+* Major distribution families (Debian, RHEL, Arch, SUSE)
+* Use cases: server, desktop, embedded, cloud, container
 
 ---
 
 ## Chapter 2: Installation and Setup
 
-* Choosing a Linux distribution for learning
-* Creating bootable USB drives (`Rufus`, `balenaEtcher`, `dd`)
-* Installing Linux using VirtualBox and VMware
-* Dual booting concepts
-* Partitioning basics: `/`, `/home`, `swap`
-* Windows Subsystem for Linux (WSL)
+* Bare metal, virtual machine, WSL
+* Partitioning basics (`/`, `/home`, swap)
+* Bootable USB creation
 
 ---
 
 ## Chapter 3: Command Line Basics
 
-* Shell basics: Bash and Zsh
-* Navigation commands: `pwd`, `ls`, `cd`
-* Directory operations: `mkdir`, `rmdir`
-* File operations: `touch`, `cp`, `mv`, `rm`
+* Shell (Bash, Zsh)
+* Navigation: `pwd`, `ls`, `cd`
+* File operations: `touch`, `cp`, `mv`, `rm`, `mkdir`, `rmdir`
 * Viewing files: `cat`, `less`, `head`, `tail`
-* Wildcards and globbing (`*`, `?`, `[abc]`)
-* Command history and auto-completion
+* Wildcards, history, autocompletion
 * Getting help: `man`, `info`, `--help`
 
 ---
@@ -37,184 +32,181 @@
 ## Chapter 4: Linux Filesystem
 
 * Filesystem Hierarchy Standard (FHS)
-* Important directories: `/bin`, `/sbin`, `/etc`, `/var`, `/usr`, `/home`, `/proc`
+* Key directories: `/etc`, `/var`, `/usr`, `/home`, `/proc`, `/dev`, `/tmp`
 * Absolute vs relative paths
-* File types in Linux
 * Hard links vs symbolic links
-* File searching: `find`, `locate`, `which`, `whereis`
-* Disk usage: `du`, `df`, `lsblk`
-* Mounting basics with `mount`
+* Finding files: `find`, `locate`, `which`, `whereis`
+* Disk usage: `du`, `df`
+* Mounting: `mount`, `umount`, `/etc/fstab`
 
 ---
 
 ## Chapter 5: File Permissions and Ownership
 
-* Understanding `ls -l`
-* Users, groups, and others
-* Changing permissions using `chmod`
-* Ownership management: `chown`, `chgrp`
-* Special permissions: `setuid`, `setgid`, sticky bit
-* Umask – default permission mask
+* `ls -l` output interpretation
+* User, group, others – read, write, execute
+* `chmod`, `chown`, `chgrp`
+* Special permissions: setuid, setgid, sticky bit
+* Umask
 
 ---
 
 ## Chapter 6: Process Management
 
-* Processes, PID, and PPID
-* Process states: running, sleeping, zombie
-* Managing processes: `ps`, `top`, `htop`, `pgrep`
-* Signals and process control: `kill`, `killall`, `pkill`
-* Foreground and background jobs: `&`, `jobs`, `fg`, `bg`
-* Process priorities: `nice`, `renice`
-* System load monitoring: `uptime`, `vmstat`
+* PID, PPID, process states
+* Listing: `ps`, `top`, `htop`, `pgrep`
+* Signals: `kill`, `killall`, `pkill` (SIGTERM, SIGKILL)
+* Foreground/background: `&`, `jobs`, `fg`, `bg`
+* Priorities: `nice`, `renice`
+* Monitoring: `uptime`, `vmstat`
+* Zombie and orphan processes
 
 ---
 
 ## Chapter 7: Package Management
 
-* Package formats: `.deb`, `.rpm`
-* APT package manager: `apt update`, `apt install`, `apt remove`, `apt upgrade`
-* DNF/YUM basics
-* Adding repositories (PPA, EPEL)
-* Installing software from source: `./configure`, `make`, `make install`
-* Alternative package formats: Snap, Flatpak, AppImage
+* Debian: APT (`.deb`) – `apt install`, `update`, `upgrade`, `remove`
+* RHEL: DNF/YUM (`.rpm`)
+* Repositories and PPAs
+* Compiling from source (`./configure`, `make`, `make install`)
+* Snap, Flatpak, AppImage
 
 ---
 
 ## Chapter 8: Shell Scripting (Bash)
 
-* Shebang (`#!/bin/bash`) and script execution
-* Variables: user-defined, environment, special variables (`$?`, `$@`, `$#`)
-* User input with `read`
-* Command substitution `$(...)`
-* Conditional statements: `if`, `else`, `test`, `[ ]`, `[[ ]]`
-* Loops: `for`, `while`, `until`
-* Arrays and positional parameters
-* Case statements
-* Functions and exit codes
-* Debugging scripts: `set -x`, `set -e`
+* Shebang, variables, special variables (`$?`, `$@`, `$#`)
+* Conditionals (`if`, `test`, `[ ]`)
+* Loops (`for`, `while`)
+* Functions, exit codes
+* Debugging: `set -x`, `set -e`
 
 ---
 
-## Chapter 9: Text Editors and Stream Processing
+## Chapter 9: Text Processing and Streams
 
-* `nano` basics
-* `vim` basics: modes, navigation, editing, saving and quitting
-* Text searching with `grep`
-* Stream editing using `sed`
-* Data extraction using `awk`
-* Pipes and redirections: `|`, `>`, `>>`, `2>`
-* Regular expressions
+* `grep`, `sed`, `awk`
+* `sort`, `uniq`, `cut`, `wc`, `tr`, `diff`
+* Pipes and redirections (`|`, `>`, `>>`, `2>`)
+* Regular expressions (basic)
 
 ---
 
 ## Chapter 10: Networking Basics
 
-* IPv4 and IPv6 basics
-* Network interfaces and addressing
-* Networking tools: `ip`, `ifconfig`, `ping`, `traceroute`, `ss`, `netstat`
-* DNS tools: `/etc/resolv.conf`, `dig`, `nslookup`
-* Download tools: `wget`, `curl`
-* Remote access: `ssh`, `scp`, `rsync`
-* Firewall basics using `ufw`
+* `ip`, `ping`, `traceroute`, `ss`
+* `curl`, `wget`
+* SSH: keys, `ssh-copy-id`, `scp`, `rsync`
+* DNS: `dig`, `nslookup`
+* Firewall: `ufw`
 
 ---
 
 ## Chapter 11: System Administration
 
-* User management: `useradd`, `usermod`, `passwd`, `userdel`
-* Group management: `groupadd`, `gpasswd`
+* User/group management: `useradd`, `usermod`, `userdel`, `groupadd`, `passwd`
 * `sudo` and `/etc/sudoers`
-* System logging: `syslog`, `journalctl`
-* Task scheduling: `cron`, `crontab`, `at`
-* systemd basics: `systemctl`, services, targets
-* Archiving and compression: `tar`, `gzip`, `zip`, `unzip`
+* `cron` and crontab
+* `systemctl` (start, stop, enable, disable, status)
+* `journalctl`, `dmesg`
+* Archiving: `tar`, `gzip`, `zip`
 
 ---
 
 ## Chapter 12: Security Fundamentals
 
 * Principle of least privilege
-* Password policies and `/etc/login.defs`
-* Firewall concepts: UFW, firewalld basics
+* Password policies, `/etc/shadow`
 * File integrity: `md5sum`, `sha256sum`
-* Auditing with `auditd`
-* SELinux and AppArmor basics
-* Encryption tools: `gpg`, `openssl`
+* SELinux / AppArmor (basic modes)
+* `gpg` encryption basics
 
 ---
 
-## Chapter 13: Monitoring and Troubleshooting
+## Chapter 13: Storage Management
 
-* System monitoring: `top`, `htop`, `free`, `vmstat`
-* Disk and I/O monitoring: `iostat`, `iotop`
-* Network monitoring: `iftop`, `nethogs`
-* Logs and debugging: `dmesg`, `journalctl`, `strace`
-* Basic troubleshooting techniques
-* Monitoring system performance and resource usage
+* Partitioning: `fdisk`, `parted`, `lsblk`
+* Filesystems: `mkfs.ext4`, `mkfs.xfs`
+* Swap: `swapon`, `swapoff`
+* LVM concepts: PV, VG, LV (`pvcreate`, `vgcreate`, `lvcreate`, `lvextend`)
+* RAID levels 0,1,5,10 (conceptual)
+* Disk quotas
 
 ---
 
-## Chapter 14: Advanced Shell Environment
+## Chapter 14: Monitoring and Debugging
 
-* Shell startup files: `/etc/profile`, `~/.bashrc`, `~/.profile`
-* Shell variables vs environment variables
-* Using `export`
-* Aliases and shell functions
-* Shell history management: `history`, `!!`, `!$`
-* Prompt customization using `PS1`
+* System: `top`, `htop`, `free`, `vmstat`, `iostat`
+* Network: `iftop`, `nethogs`
+* Process debugging: `strace`, `ltrace`
+* Performance: `perf`
+
+---
+
+## Chapter 15: Advanced Shell Environment
+
+* Startup files: `.bashrc`, `.bash_profile`, `/etc/profile`
+* Environment variables (`export`, `env`)
+* Aliases and functions
+* History management (`!!`, `!$`, `HISTSIZE`)
+* Prompt customization (`PS1`)
 * Terminal multiplexers: `screen`, `tmux`
-* Background execution: `nohup`, `disown`
+* `nohup`, `disown`
 
 ---
 
-## Chapter 15: Linux Internals
+## Chapter 16: Linux Internals (Conceptual)
 
-* Linux boot process: BIOS/UEFI, GRUB, Kernel, initramfs, systemd
-* Runlevels and systemd targets
-* Kernel modules: `lsmod`, `modprobe`
+* Boot process: BIOS → GRUB → Kernel → initramfs → systemd
+* Runlevels / systemd targets
+* Kernel modules (`lsmod`, `modprobe`)
 * `/proc` and `/sys` filesystems
-* System calls overview: `fork()`, `exec()`, `read()`, `write()`
-* Virtual memory and swapping
-* IPC basics: pipes, signals
+* System calls (`fork`, `exec`, `open`, `read`, `write`)
+* Virtual memory, paging, swapping
+* IPC: pipes, signals
 
 ---
 
-## Chapter 16: Storage Management
+## Chapter 17: Access Control Lists (ACLs)
 
-* Disk partitioning: MBR vs GPT, `fdisk`, `parted`
-* Filesystems: ext4, xfs, btrfs basics
-* Mounting and unmounting: `mount`, `umount`, `/etc/fstab`
-* Swap management: `swapon`, `swapoff`
-* LVM basics: Physical Volume (PV), Volume Group (VG), Logical Volume (LV)
-* RAID concepts overview
+* `getfacl`, `setfacl`
+* Granting permissions to specific users/groups
+* Default ACLs on directories
 
 ---
 
-## Chapter 17: Linux in Cloud & DevOps (Basics)
+## Chapter 18: Core Utilities (Advanced)
 
-* Linux cloud servers: AWS EC2, DigitalOcean, GCP basics
-* SSH keys and server access
-* Basic server hardening
-* `fail2ban` basics
-* Docker introduction: containers vs virtual machines, Docker architecture
-* Basic Docker commands: `docker run`, `docker ps`, `docker exec`, `docker stop`
+* `xargs`, `tee`, `script`
+* `dd`, `od`, `hexdump`, `base64`
+* `date`, `timedatectl`
+* Conditional execution (`&&`, `||`, `;`)
 
 ---
 
-## Chapter 18: Important Interview Topics
+## Chapter 19: Linux in Cloud & DevOps
+
+* Cloud instances (AWS EC2, DigitalOcean)
+* SSH key management, security groups
+* `fail2ban`
+* Docker basics: container vs VM, `docker run`, `ps`, `exec`, logs, Dockerfile
+* `docker-compose` (concept)
+
+---
+
+## Chapter 20: Important Interview Topics
 
 * Linux vs Unix
-* Linux boot process
 * Hard link vs symbolic link
 * Zombie vs orphan process
-* Difference between `kill`, `killall`, and `pkill`
-* How `sudo` works
+* `kill -9` vs `kill -15`
+* `sudo` vs `su`
 * `cron` vs systemd timers
-* Difference between TCP and UDP
-* Common Linux configuration files
-* Frequently asked Linux commands
-* Important troubleshooting commands
+* `ps aux` vs `ps -ef`
+* How to check open ports (`ss -tulpn`)
+* How to find large files (`find`)
+* How to debug a high CPU process
+* Common configuration files paths
 
 ---
 
